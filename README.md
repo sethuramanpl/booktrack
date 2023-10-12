@@ -30,3 +30,5 @@ The project can be run with
 The project can be viewed in the browser at
 
 - [http://localhost:3000](http://localhost:3000)
+- Once you accessed the app, you can move around the books based on the status and also search for new books by clicked add new book button.
+- you can search for books and add it to your shelf also you can remove the books from the shelf by choosing the status none.
