@@ -1,5 +1,6 @@
-import BookshelfChanger
- from "./BookshelfChanger";
+import BookshelfChanger from "./BookshelfChanger";
+import PropTypes from 'prop-types';
+
 const Book = ({ book, shelf, onMove }) => {
     return (
       <li>
@@ -22,4 +23,9 @@ const Book = ({ book, shelf, onMove }) => {
     );
   };
 
+  Book.prototype = {
+    book : PropTypes.object,
+    shelf : PropTypes.string,
+    onMove : PropTypes.func
+  }
   export default Book;

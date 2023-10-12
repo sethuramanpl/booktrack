@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import * as BooksAPI from './BooksAPI'
 import ListBooks from "./ListBooks";
 import SearchBooks from "./SearchBooks";
+import { debounce } from 'throttle-debounce';
+
 
 function App() {
   const bookshelves = [
@@ -35,7 +37,7 @@ function App() {
     }
   };
 
-  const searchForBooks = ( query => {
+  const searchForBooks = debounce(300, (query) => {
     if (query.length > 0) {
       BooksAPI.search(query).then(books => {
         if (books.error) {

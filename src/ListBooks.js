@@ -1,6 +1,7 @@
 import React from 'react'
 import OpenSearchButton from './OpenSearchButton';
 import Bookcase from './Bookcase';
+import PropTypes from 'prop-types';
 
 const ListBooks = ({ bookshelves, books, onMove }) => {
     return (
@@ -14,5 +15,10 @@ const ListBooks = ({ bookshelves, books, onMove }) => {
       );
     };
 
+    ListBooks.prototype = {
+      bookshelves : PropTypes.object,
+      books : PropTypes.object,
+      onMove : PropTypes.func
+    }
 export default ListBooks
 

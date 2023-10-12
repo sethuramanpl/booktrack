@@ -1,4 +1,6 @@
 import Book from "./Book";
+import PropTypes from 'prop-types';
+
 const Bookshelf = ({ shelf, books, onMove }) => {
     const booksOnThisShelf = books.filter(book => book.shelf === shelf.key);
     return (
@@ -14,5 +16,11 @@ const Bookshelf = ({ shelf, books, onMove }) => {
       </div>
     );
   };
+
+  Bookshelf.prototype = {
+    shelf : PropTypes.object,
+    books : PropTypes.object,
+    onMove : PropTypes.func
+  }
 
   export default Bookshelf;

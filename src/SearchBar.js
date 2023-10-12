@@ -1,5 +1,6 @@
 import CloseSearchButton from "./CloseSearchButton";
 import { useState} from 'react';
+import PropTypes from 'prop-types';
 
 const SearchBar = ({ onSearch, onResetSearch }) => {
     const [value, setValue] = useState('');
@@ -26,4 +27,8 @@ const SearchBar = ({ onSearch, onResetSearch }) => {
     );
   };
 
+  SearchBar.prototype = {
+    onSearch : PropTypes.func,
+    onResetSearch : PropTypes.func,
+  }
   export default SearchBar;

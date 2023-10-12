@@ -1,4 +1,5 @@
 import Book from "./Book";
+import PropTypes from 'prop-types';
 
 const SearchResults = ({ searchBooks, myBooks, onMove }) => {
     console.log('i am in search results' + JSON.stringify(searchBooks))
@@ -22,5 +23,9 @@ const SearchResults = ({ searchBooks, myBooks, onMove }) => {
       </div>
     );
   };
-
+  SearchResults.prototype = {
+    searchBooks : PropTypes.object,
+    myBooks : PropTypes.object,
+    onMove : PropTypes.func
+  }
   export default SearchResults;

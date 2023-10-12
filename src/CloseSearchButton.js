@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const CloseSearchButton = ({ onResetSearch }) => {
     return (
@@ -10,4 +11,7 @@ const CloseSearchButton = ({ onResetSearch }) => {
     );
   };
 
+  CloseSearchButton.prototype = {
+    onResetSearch : PropTypes.func,
+  }
   export default CloseSearchButton;

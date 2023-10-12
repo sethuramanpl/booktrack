@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types';
 
 const BookshelfChanger = ({ book, shelf, onMove }) => {
     const [value, setValue] = useState(shelf);
@@ -37,5 +38,11 @@ const BookshelfChanger = ({ book, shelf, onMove }) => {
       </div>
     );
   };
+
+  BookshelfChanger.prototype = {
+    book : PropTypes.object,
+    shelf : PropTypes.string,
+    onMove : PropTypes.func
+  }
 
   export default BookshelfChanger;

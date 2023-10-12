@@ -1,4 +1,5 @@
 import Bookshelf from "./Bookshelf";
+import PropTypes from 'prop-types';
 
 const Bookcase = ({ bookshelves, books, onMove }) => {
     return (
@@ -11,5 +12,11 @@ const Bookcase = ({ bookshelves, books, onMove }) => {
       </div>
     );
   };
+
+  Bookcase.prototype = {
+    bookshelves : PropTypes.object,
+    books : PropTypes.object,
+    onMove : PropTypes.func
+  }
 
   export default Bookcase;
